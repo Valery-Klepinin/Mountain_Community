@@ -17,8 +17,6 @@ import HikingIcon from '@mui/icons-material/Hiking';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 import './trackPage.scss';
-
-import MyMap from './Map';
 import CommentForm from '../comments/CommentForm';
 import { Rating } from '@mui/material';
 import { useAppDispatch } from '../../store';
@@ -159,9 +157,6 @@ export default function TrackPage({ loading }: TracksListProps): JSX.Element {
           )}
         </CardContent>
         <CardActions></CardActions>
-        <div id="myMap">
-          <MyMap id={Number(id)} />
-        </div>
       </Card>
       <CommentForm trackId={Number(id)} />
     </div>
