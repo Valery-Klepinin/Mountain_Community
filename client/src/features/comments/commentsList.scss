@@ -1,0 +1,37 @@
+.comment {
+  background-color: #ffffff;
+  // border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  @media (max-width: 768px) {
+    margin-bottom: 12px;
+    padding: 12px;
+  }
+
+  .comment-text {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 1.4;
+    margin-bottom: 8px;
+    color: #333;
+
+    @media (max-width: 768px) {
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+  }
+
+  .comment-name {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    color: #056573;
+
+    @media (max-width: 768px) {
+      font-size: 14px;
+    }
+  }
+}

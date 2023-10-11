@@ -1,0 +1,130 @@
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #fff;
+  border-bottom: 1px solid #f0f0f0;
+  padding: 10px 30px;
+  color: #000;
+  z-index: 1000;
+  font-size: 14px;
+}
+
+.header-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+}
+
+.link {
+  text-decoration: none;
+  color: #000;
+  font-size: 14px;
+  margin-right: 20px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  font-family:
+    futura-pt,
+    Helvetica Neue,
+    sans-serif;
+  text-transform: uppercase;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &:hover {
+    color: #056573;
+    text-decoration: none;
+  }
+}
+
+.right {
+  display: flex;
+  align-items: center;
+}
+
+.user {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #000;
+  font-size: 14px;
+}
+
+.button.register {
+  background-color: #ffd204;
+  color: #000;
+}
+.button.signin {
+  background-color: transparent;
+  color: #000;
+}
+.button.favorites {
+  background-color: transparent;
+  color: #000;
+}
+.button.favorites:hover {
+  background-color: transparent;
+  color: #000;
+  color: #056573;
+  text-decoration: none;
+}
+
+.button.register:hover {
+  background-color: #ffd204;
+  color: #fff;
+}
+.logout {
+  background: none;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.logout:hover {
+  background-color: transparent;
+  color: red;
+}
+
+.burger-menu {
+  display: none;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .burger-menu {
+    display: block;
+  }
+
+  .left {
+    display: none;
+  }
+  .right {
+    display: none;
+  }
+  .mobile-menu {
+    display: block;
+    margin-top: 10px;
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+  }
+}

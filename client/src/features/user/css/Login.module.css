@@ -1,0 +1,32 @@
+/* Login.module.css */
+
+.formContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px;
+  border: 1px solid #007bff;
+  border-radius: 4px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+.title {
+  margin-bottom: 16px;
+}
+
+.input {
+  margin: 8px;
+  width: 100%;
+}
+
+.submitButton {
+  margin: 16px 0;
+}

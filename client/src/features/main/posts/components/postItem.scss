@@ -1,0 +1,49 @@
+.post-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 280px;
+  @media (max-width: 1200px) {
+    justify-content: center;
+    align-items: flex-start;
+  }
+  @media (max-width: 1100px) {
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 500px;
+  }
+  &-link {
+    text-decoration: none;
+    color: #056573;
+  }
+  &-p {
+    margin-top: 10px;
+    font-size: 18px;
+    margin-bottom: 0;
+    @media (max-width: 1200px) {
+      font-size: 14px;
+    }
+  }
+  &-btns {
+    display: flex;
+    justify-content: space-around;
+    &-del,
+    &-update {
+      color: #056573 !important;
+      transition: all 0.4s ease-in-out !important;
+    }
+  }
+}
+.postImg {
+  min-height: 200px;
+  min-width: 200px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-background-position: center;
+  background-position: center;
+  width: 100%;
+  object-fit: cover;
+  @media (max-width: 1000px) {
+    min-width: 0;
+    min-width: 0;
+  }
+}

@@ -1,0 +1,11 @@
+.main-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &-link {
+    text-decoration: none;
+    margin-left: 10px;
+    font-size: 20px;
+    color: #056573;
+  }
+}

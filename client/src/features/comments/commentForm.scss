@@ -1,0 +1,10 @@
+.comment-btn {
+  margin-top: 10px !important;
+  color: #056573 !important;
+  border: 1px solid #056573 !important;
+  transition: all 0.4s ease-in-out !important;
+  &:hover {
+    color: white !important;
+    background-color: #056573 !important;
+  }
+}
