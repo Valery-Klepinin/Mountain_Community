@@ -6,7 +6,7 @@ WORKDIR /app
 
 
 # Устанавливаем переменные окружения
-ENV DATABASE_URL=postgresql://postgres:HikingDarinaMaster@db.rfpwvzwcqjgwkgspgkrm.supabase.co:5432/postgres
+ENV DATABASE_URL=postgresql://postgres:Esotap96Esotap1996@db.vdzmplavelhnyyuiyjep.supabase.co:5432/postgres
 
 # Копируем обе части приложения (клиентскую и серверную) в контейнер
 COPY . .
