@@ -17,7 +17,6 @@ import AddPostPage from '../features/admin/AddPostPage';
 import PostPage from '../features/main/posts/components/PostPage';
 import FormAdd from '../features/admin/AddTrackPage';
 import FavoriteList from '../features/favorites/FavoriteList';
-import MapPage from '../features/tracks/MapPage';
 import { loadFavorites } from '../features/favorites/favoritesSlice';
 import Error from '../features/404/404';
 import ScrollToTop from './Scroll';
@@ -58,7 +57,6 @@ function App(): JSX.Element {
         <Routes>
           <Route path="/" element={<Main loading={loading} />} />
           <Route path="/tracks" element={<TracksList loading={loading} />} />
-          <Route path="/map" element={<MapPage loading={loading}/>} />
           <Route path="/auth/register" element={<RegisterFormPage />} />
           <Route path="/auth/login" element={<LoginFormPage />} />
           <Route path="/posts/:id" element={<PostPage loading={loading}/>} />
