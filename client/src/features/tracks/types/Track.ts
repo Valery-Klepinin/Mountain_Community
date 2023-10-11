@@ -1,4 +1,3 @@
-import Coordinate from './Coordinate';
 import Favorite from '../../favorites/Favorite';
 import Image from './Image';
 
@@ -14,8 +13,6 @@ type Track = {
   time: number;
   height: number;
   Images: Image[];
-
-  Coordinates: Coordinate[];
   Favorites: Favorite[];
 };
 
