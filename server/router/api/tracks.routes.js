@@ -1,10 +1,10 @@
 const router = require('express').Router();
-const { Coordinate, Track, Image } = require('../../db/models');
+const { Track, Image } = require('../../db/models');
 
 router.get('/', async (req, res) => {
   try {
     const tracks = await Track.findAll({
-      include: [Image, Coordinate],
+      include: [Image],
       nest: true,
     });
     res.json(tracks);
@@ -35,20 +35,7 @@ router.post('/add', async (req, res) => {
       return res.status(400).send('No files were uploaded.');
     }
 
-    const {
-      title,
-      description,
-      length,
-      tent,
-      waterfield,
-      bicycle,
-      time,
-      height,
-      startLatitude,
-      startLongitude,
-      endLatitude,
-      endLongitude,
-    } = req.body;
+    const { title, description } = req.body;
 
     const value = (a) => {
       if (a === 'true') {
@@ -62,24 +49,6 @@ router.post('/add', async (req, res) => {
     const newTrack = await Track.create({
       title,
       description,
-      length: +length,
-      tent: value(tent),
-      waterfield: value(waterfield),
-      bicycle: value(bicycle),
-      time: +time,
-      height: Number(height),
-    });
-    await Coordinate.create({
-      trackId: newTrack.id,
-      coordinateLatitude: +startLatitude,
-      coordinateLongitude: +startLongitude,
-      index: 1,
-    });
-    await Coordinate.create({
-      trackId: newTrack.id,
-      coordinateLatitude: +endLatitude,
-      coordinateLongitude: +endLongitude,
-      index: 2,
     });
 
     let newArray = [];
@@ -102,7 +71,7 @@ router.post('/add', async (req, res) => {
 
     const newNewTrack = await Track.findOne({
       where: { id: newTrack.id },
-      include: [{ model: Image }, { model: Coordinate }],
+      include: [{ model: Image }],
     });
     res.json(newNewTrack);
   } catch ({ message }) {
@@ -117,20 +86,7 @@ router.put('/update/:trackId', async (req, res) => {
       return res.status(400).send('No files were uploaded.');
     }
 
-    const {
-      title,
-      description,
-      length,
-      tent,
-      waterfield,
-      bicycle,
-      time,
-      height,
-      startLatitude,
-      startLongitude,
-      endLatitude,
-      endLongitude,
-    } = req.body;
+    const { title, description } = req.body;
     const { img } = req.files;
 
     const value = (a) => {
@@ -144,38 +100,9 @@ router.put('/update/:trackId', async (req, res) => {
       {
         title,
         description,
-        length: +length,
-        tent: value(tent),
-        waterfield: value(waterfield),
-        bicycle: value(bicycle),
-        time: +time,
-        height: Number(height),
       },
       {
         where: { id: Number(trackId) },
-        returning: true,
-      }
-    );
-
-    await Coordinate.update(
-      {
-        coordinateLatitude: +startLatitude,
-        coordinateLongitude: +startLongitude,
-        index: 1,
-      },
-      {
-        where: { trackId: track.id },
-        returning: true,
-      }
-    );
-    await Coordinate.update(
-      {
-        coordinateLatitude: +endLatitude,
-        coordinateLongitude: +endLongitude,
-        index: 2,
-      },
-      {
-        where: { trackId: track.id },
         returning: true,
       }
     );
@@ -206,7 +133,7 @@ router.put('/update/:trackId', async (req, res) => {
 
     const newTrack = await Track.findOne({
       where: { id: track.id },
-      include: [{ model: Image }, { model: Coordinate }],
+      include: [{ model: Image }],
       row: true,
     });
     res.json(newTrack);

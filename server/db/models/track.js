@@ -8,9 +8,8 @@ module.exports = (sequelize, DataTypes) => {
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
-    static associate({ Comment, Rating, User, Coordinate, Image, Favorite }) {
+    static associate({ Comment, Rating, User, Image, Favorite }) {
       this.hasMany(Comment, { foreignKey: 'trackId' });
-      this.hasMany(Coordinate, { foreignKey: 'trackId' });
       this.hasMany(Image, { foreignKey: 'trackId' });
       this.hasMany(Rating, { foreignKey: 'trackId' });
       this.belongsToMany(User, {
@@ -35,12 +34,6 @@ module.exports = (sequelize, DataTypes) => {
         defaultValue: 0,
         type: DataTypes.FLOAT,
       },
-      length: DataTypes.INTEGER,
-      tent: DataTypes.BOOLEAN,
-      waterfield: DataTypes.BOOLEAN,
-      bicycle: DataTypes.BOOLEAN,
-      time: DataTypes.INTEGER,
-      height: DataTypes.INTEGER,
     },
     {
       sequelize,
