@@ -22,24 +22,6 @@ module.exports = {
         defaultValue: 0,
         type: Sequelize.FLOAT,
       },
-      length: {
-        type: Sequelize.INTEGER,
-      },
-      tent: {
-        type: Sequelize.BOOLEAN,
-      },
-      waterfield: {
-        type: Sequelize.BOOLEAN,
-      },
-      bicycle: {
-        type: Sequelize.BOOLEAN,
-      },
-      time: {
-        type: Sequelize.INTEGER,
-      },
-      height: {
-        type: Sequelize.INTEGER,
-      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
